@@ -28,7 +28,7 @@ public class windowGame extends javax.swing.JFrame{
         Container c = getContentPane(); //Gets the content layer
         
         JLabel label = new JLabel(); //JLabel Creation
-        label.setIcon(new ImageIcon("C:\\Users\\Jonathas\\Documents\\Meu Inicio\\JAVA\\Client#Button\\img\\field.png")); //Sets the image to be displayed as an icon
+        label.setIcon(new ImageIcon("img\\field.png")); //Sets the image to be displayed as an icon
         Dimension size = label.getPreferredSize(); //Gets the size of the image
         label.setBounds(0, 0, size.width, size.height); //Sets the location of the image
         
