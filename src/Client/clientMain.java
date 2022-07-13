@@ -29,6 +29,7 @@ public class clientMain extends JFrame implements ActionListener{
 			System.exit(0);
 		}
 		if(e.getSource()==shop) {
+			dispose();
 			shop shop = new shop();
 		}
 

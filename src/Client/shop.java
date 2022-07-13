@@ -23,6 +23,8 @@ public class shop extends JFrame implements ActionListener {
 		buttonAscreen();
 	}
 	Container c = getContentPane();
+	
+	
 	public void buttonAscreen() {
 		
 		//img do logo
@@ -51,16 +53,12 @@ public class shop extends JFrame implements ActionListener {
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
-		
-		
 	}
 	
-
-
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==back) {
+			dispose(); //pra fechar a janela anterior
 			clientMain clientMain = new clientMain();
 		}
 		if(e.getSource()==next) {
