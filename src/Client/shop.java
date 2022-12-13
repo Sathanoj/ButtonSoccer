@@ -1,58 +1,65 @@
 package Client;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-
-import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 public class shop extends JFrame implements ActionListener {
-	//botoes 
-	JButton next = new JButton("Next");
-	JButton back = new JButton("Back");
+
+	JPanel panelShop = new JPanel();
 	
+    JLabel logoshop = new JLabel(); 
+    
+	botoes back = new botoes();
+	
+	JTextField Saldo= new JTextField("Saldo: ");
+	private int valor = 0;
 	//imagens
 	
 	
 
 	
 	public shop() {
-		buttonAscreen();
+		frameShop();
+
 	}
-	Container c = getContentPane();
-	
-	
-	public void buttonAscreen() {
+	public void frameShop() {
+		buttonSHOP();
+		imgLayoutShop();
 		
-		//img do logo
-	    JLabel logoshop = new JLabel(); //JLabel Creation
+		this.add(panelShop);
+		panelShop.setLayout(null);
+		
+		this.setTitle("Client - SHOP");
+		this.setSize(700,600);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
+	}
+	public void imgLayoutShop() {
 	    logoshop.setIcon(new ImageIcon("img\\Shop.png"));
-		next.addActionListener(this);
-		c.add(logoshop);
+		add(logoshop);
 		logoshop.setBounds(250,40,200,100); //2 primeiros posição 2 ultimos tamanho
 		
 		
-		//Buttons 
-		setLayout(null);
-		next.setBounds(250, 300, 100, 60);
-		add(next);
-		
-		//Button Sair
-		back.addActionListener(this);
-		
-		setLayout(null);
-		back.setBounds(250, 485, 80, 30);
+
+		add(Saldo);
+		Saldo.setBounds(250,200,70,40);
+		Saldo.setEditable(false);
+
+
+	}
+	
+	public void buttonSHOP() {
 		add(back);
-		
-		
-		setTitle("SHOP");
-		setSize(700,600);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setVisible(true);
+		back.setText("BACK");
+		back.setBounds(250, 485, 80, 30);
+		back.addActionListener(this);
 	}
 	
 	@Override
@@ -61,9 +68,15 @@ public class shop extends JFrame implements ActionListener {
 			dispose(); //pra fechar a janela anterior
 			clientMain clientMain = new clientMain();
 		}
-		if(e.getSource()==next) {
-			//Slide de pag para cada produto vendido.
-		}
+
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
